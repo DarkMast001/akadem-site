@@ -1,1 +1,1 @@
-Сайт расоложен тут: http://moscow.akadem.webtm.ru/
+Сайт расположен тут: http://moscow.akadem.webtm.ru/
