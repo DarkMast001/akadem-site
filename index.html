@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="">
-    <meta name="description" content="">
+	<meta name="keywords" content="вечеринки, клуб, музыка, ночной клуб, академ, ТУСА, мероприятия, вечеринки 2024">
+    <meta name="description" content="Планируйте свои вечеринки с AKADEM! Узнайте о лучших мероприятиях в клубах Москвы, новинки, акции, вечеринки с 2024 года.">
 	<title>AKADEM вечиринка</title>
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="shortcut icon" href="images/akadem_logo.ico" type="image/x-icon">
@@ -21,10 +21,10 @@
 					<a class="nav_link" href="#party">Галерея</a>
 				</li>
 				<li class="nav_li">
-					<a class="nav_link" href="#">Контакты</a>
+					<a class="nav_link" href="#annons">Контакты</a>
 				</li>
 				<li class="nav_li">
-					<a class="nav_link" href="#">О нас</a>
+					<a class="nav_link" href="#about">О нас</a>
 				</li>
 			</ul>
 		</nav>
@@ -75,8 +75,8 @@
 				<p class="text_annons_party">АННОНСЫ</p>
 				<div class="gallery_container">
 					<div class="gallery">
-						<div class="img_container"><img src="images/a1.jpg" alt="вечеринки 1 ноября 2024"></div>
-						<div class="img_container"><img src="images/a2.jpg" alt="вечеринки 1 июля 2024"></div>
+						<div class="img_container"><img src="images/a1.jpg" alt="вечеринки 2 ноября 2024"></div>
+						<div class="img_container"><img src="images/a2.jpg" alt="вечеринки 24 мая 2024"></div>
 						<div class="img_container"><img src="images/a3.jpg" alt="вечеринка 4 мая 2024"></div>
 					</div>
 				</div>
@@ -90,16 +90,44 @@
 				</div>
 			</div>
 		</section>
-		<section class="party_section" id="party">
-			<div>
-				<p class="text_annons_party">НАШИ ТУСОВКИ</p>
-				<div></div>
+		<section class="party_section">
+			<p class="text_annons_party">НАШИ ТУСОВКИ</p>
+			<div class="gallery_container_slider">
+				<div class="gallery_slider">
+					<div class="gallery_slide_container">
+						<img src="images/02_11_photo.jpg" alt="вечеринки 2 ноября 2024" class="gallery_slide" onclick="window.open('https://disk.yandex.ru/d/BNzCbMyW9cfiAQ', '_blank')">
+						<div class="overlay_text"><span class="span_img">AKADEM 02.11.24</span></div>
+					</div>
+					<div class="gallery_slide_container">
+						<img src="images/24_05_photo.jpg" alt="вечеринка 24 мая 2024" class="gallery_slide" onclick="window.open('https://disk.yandex.ru/d/G-aJ9eK1JPxirA', '_blank')">
+						<div class="overlay_text"><span class="span_img">AKADEM 24.05.24</span></div>
+					</div>
+					<div class="gallery_slide_container">
+						<img src="images/04_05_photo.jpg" alt="вечеринки 4 мая 2024" class="gallery_slide" onclick="window.open('https://disk.yandex.ru/d/5H4f2uID-ZwXXg', '_blank')">
+						<div class="overlay_text"><span class="span_img">AKADEM 04.05.24</span></div>
+					</div>
+				</div>
+				<div class="gallery_controls">
+					<button class="btn prev"><span class="arrow">&lt;</span></button>
+					<button class="btn next"><span class="arrow">&gt;</span></button>
+				</div>
+				<div class="gallery_indicators">
+					<span class="indicator active"></span>
+					<span class="indicator"></span>
+					<span class="indicator"></span>
+				</div>
 			</div>
 		</section>
 	</main>
 
-	<footer>
-
+	<footer class="footer" id="about">
+		<div class="footer_img_container">
+			<img src="images/akadem_logo.jpg" alt="логотип akadem" class="logo_img akadem">
+			<img src="images/tg_big.svg" alt="логотип телеграмм" class="logo_img tg" onclick="window.open('https://t.me/AKADEMtusa', '_blank')">
+		</div>
+		<div>
+			<p class="footer_text">AKADEM - ТУСА</p>
+		</div>
 	</footer>
 </body>
 </html>

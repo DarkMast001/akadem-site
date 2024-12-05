@@ -25,3 +25,71 @@ galleryContainer.addEventListener('touchmove', (e) => {
     });
     touchStartX = touchEndX; // Обновляем начальную точку для последовательного свайпа
 });
+
+const slider = document.querySelector('.gallery_slider');
+const slides = document.querySelectorAll('.gallery_slide_container');
+const gallerySlide = document.querySelector('.gallery_slide_container');
+const prevBtn = document.querySelector('.btn.prev');
+const nextBtn = document.querySelector('.btn.next');
+const indicators = document.querySelectorAll('.indicator');
+
+let currentIndex = 0;
+const slideCount = slides.length;
+// const slideWidth = 634; // Ширина одного слайда
+const slideWidth = gallerySlide.getBoundingClientRect().width;
+let autoSlideInterval;
+
+// Функция для переключения слайдов
+function goToSlide(index) {
+    if (index < 0) {
+        currentIndex = slideCount - 1;
+    } else if (index >= slideCount) {
+        currentIndex = 0;
+    } else {
+        currentIndex = index;
+    }
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    updateIndicators();
+}
+
+// Обновление индикаторов
+function updateIndicators() {
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+    });
+}
+
+// Кнопки управления
+prevBtn.addEventListener('click', () => {
+    goToSlide(currentIndex - 1);
+    resetAutoSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+    goToSlide(currentIndex + 1);
+    resetAutoSlide();
+});
+
+// Индикаторы
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        goToSlide(index);
+        resetAutoSlide();
+    });
+});
+
+// Автоматическая смена слайдов
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        goToSlide(currentIndex + 1);
+    }, 5000); // Интервал в 5 секунд
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Инициализация
+goToSlide(0);
+startAutoSlide();

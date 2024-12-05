@@ -1,5 +1,6 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&display=swap');
 
 html {
 	scroll-behavior: smooth;
@@ -326,13 +327,15 @@ html {
 }
 
 .gallery_container {
-	width: 90%;
+	width: 80%;
 	height: 330px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	overflow: hidden;
 	white-space: nowrap;
 	box-sizing: border-box;
+	border: solid;
+	border-color: rgb(59, 59, 59);
 }
 
 .gallery {
@@ -344,6 +347,7 @@ html {
 	height: 330px;
 	display: inline-block;
 	position: relative;
+	overflow: hidden;
 }
 
 .gallery img {
@@ -443,12 +447,10 @@ html {
 
 	.subscribe_text {
 		font-size: 11.7px;
-		line-height: 1.04;
 	}
 
 	.more_text {
 		font-size: 11.7px;
-		line-height: 1.04;
 	}
 
 	.go_over_button {
@@ -489,12 +491,10 @@ html {
 
 	.subscribe_text {
 		font-size: 8px;
-		line-height: 0.8;
 	}
 
 	.more_text {
 		font-size: 8px;
-		line-height: 0.8;
 	}
 
 	.go_over_button {
@@ -524,12 +524,10 @@ html {
 
 	.subscribe_text {
 		font-size: 5.4px;
-		line-height: 0.48;
 	}
 
 	.more_text {
 		font-size: 5.4px;
-		line-height: 0.48;
 	}
 
 	.go_over_button {
@@ -559,4 +557,204 @@ html {
 	flex-direction: column;
 	align-items: center;
 	background-color: rgba(51, 51, 51, 1);
+}
+
+.gallery_container_slider {
+	height: 655px;
+	width: 634px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery_slider {
+	display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.gallery_slide_container {
+	position: relative;
+	flex-shrink: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.gallery_slide {
+	height: 100%;
+	width: 100%;
+	object-position: 50% 0%;
+	cursor: pointer;
+	object-fit: cover;
+	transform: scale(1.05);
+	transition: transform 0.3s ease;
+}
+
+.gallery_slide:hover {
+	transform: scale(1);
+}
+
+.overlay_text {
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.span_img {
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	color: whitesmoke;
+	font-size: 34px;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+.gallery_slide_container:hover .overlay_text {
+	opacity: 1;
+}
+
+.arrow {
+	font-family: "Nanum Gothic", serif;
+	font-weight: 700;
+}
+
+.btn {
+	position: absolute;
+	top: 50%;
+	background-color: rgba(46, 46, 46, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.btn.prev {
+	left: 10px;
+}
+
+.btn.next {
+	right: 10px;
+}
+
+.btn:hover {
+	background-color: rgba(46, 46, 46, 0.8);
+}
+
+.gallery_indicators {
+	position: absolute;
+    bottom: 20px;
+    left: 50%;
+	transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+	width: 10px;
+    height: 10px;
+    background-color: rgba(46, 46, 46, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: rgba(46, 46, 46, 0.8);
+}
+
+@media (max-width: 830px) {
+	/* на 25% уменьшаем */
+
+	.gallery_container_slider {
+		height: 491.25px;			/* 655 */
+		width: 507.2px;				/* 634 */
+		margin-top: 30px;			/* 40 */
+		margin-bottom: 30px;		/* 40 */
+	}
+
+	.span_img {
+		font-size: 25.5px;			/* 34 */
+	}
+}
+
+@media (max-width: 630px) {
+	/* на 50% уменьшаем */
+
+	.gallery_container_slider {
+		height: 327.5px;			/* 655 */
+		width: 317px;				/* 634 */
+		margin-top: 20px;			/* 40 */
+		margin-bottom: 20px;		/* 40 */
+	}
+
+	.span_img {
+		font-size: 17px;			/* 34 */
+	}
+}
+
+/*==================*/
+/*------FOOTER------*/
+/*==================*/
+
+.footer {
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer_img_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+
+.logo_img {
+	width: 100%;
+}
+
+.logo_img.akadem {
+	height: 190px;
+}
+
+.logo_img.tg {
+	cursor: pointer;
+	height: 110px
+}
+
+.footer_text {
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	color: whitesmoke;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+@media (max-width: 630px) {
+	/* на 50% уменьшаем */
+
+	.footer_img_container {
+		gap: 20px;				/* 40 */
+	}
+
+	.logo_img.akadem {
+		height: 95px;			/* 190 */
+	}
+	
+	.logo_img.tg {
+		height: 55px			/* 110 */
+	}
+
+	.footer_text {
+		font-size: 9px;			/* 18 */
+	}
 }
